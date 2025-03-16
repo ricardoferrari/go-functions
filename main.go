@@ -12,6 +12,7 @@ func main() {
 	fmt.Println(transformNumbers(numbers, createMultiplyByANumberFunction(3)))
 	variadicFunction(1, 2, 3, 4, 5)
 	variadicFunction(numbers...)
+	fmt.Println(recursiveFatorialFunction(5))
 }
 
 // This function takes a slice of numbers and a function that transforms a number
@@ -41,4 +42,11 @@ func variadicFunction(numbers ...int) {
 	for _, number := range numbers {
 		fmt.Println(number)
 	}
+}
+
+func recursiveFatorialFunction(number int) int {
+	if number == 0 {
+		return 1
+	}
+	return number * recursiveFatorialFunction(number-1)
 }
